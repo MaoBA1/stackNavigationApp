@@ -11,17 +11,17 @@ const proudectdetails = (props) => {
     return(
         <View style={styles.container}>
            <View>
-               <Text>{Product.productName}</Text>
+               <Text style={styles.titleFont}>{Product.productName}</Text>
            </View>
            <View>
-               <Text>{Product.productPrice}</Text>
+               <Text style={styles.regularFont}>{Product.productPrice}₪</Text>
            </View>
-           <View>
-               <Text>{Product.productDescription}</Text>
+           <View style={styles.description}>
+               <Text style={styles.regularFont}>{Product.productDescription}</Text>
            </View>
            <View>
                <Image
-                  style={{width: 300, height: 400}} 
+                  style={{width: 300, height: 400, borderRadius:10}} 
                   source={{uri:Product.imageUrl}}         
                />
            </View>
@@ -33,11 +33,29 @@ const proudectdetails = (props) => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#ff0',
+      backgroundColor: '#990fff',
       alignItems: 'center',
       justifyContent: 'center',
+      
     },
-   
+    description:{
+        backgroundColor: '#0099ff',
+        borderRadius:10,
+        margin:20,
+        padding:20,
+        justifyContent:'center',
+        alignItems:'center',
+        borderWidth:2,
+        shadowOpacity:10
+    },
+    titleFont:{
+        fontFamily:'impact',
+        fontSize:50,
+    },
+    regularFont:{
+        fontFamily:'impact',
+        fontSize:20
+    }
   });
 
   export default proudectdetails;
