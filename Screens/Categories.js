@@ -182,7 +182,7 @@ const Categories = (props) => {
                 keyExtractor={item => item.id}
                 renderItem={categoriItem => <TouchableOpacity onPress={() => {props.navigation.navigate('Products',{productsList:categoriItem.item})}} >
                     <View style={styles.btn}>
-                        <Text>
+                        <Text style={{fontFamily: 'AppleSDGothicNeo-Bold'}}>
                             {categoriItem.item.categorieName}
                         </Text>
                     </View>

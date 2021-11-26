@@ -13,10 +13,10 @@ const productsList = props.route.params.productsList.products
                 renderItem={Proudect => 
                 <TouchableOpacity style={styles.btn} onPress={() => {props.navigation.navigate('Proudectdetails',{product:Proudect.item})}}>
                 <View>
-                  <Text>
+                  <Text style={{fontFamily: 'AppleSDGothicNeo-Bold'}}>
                     {Proudect.item.productName}
                   </Text>   
-                  <Text>
+                  <Text style={{fontFamily: 'AppleSDGothicNeo-Bold'}}>
                     {Proudect.item.productPrice}
                   </Text> 
                 </View>

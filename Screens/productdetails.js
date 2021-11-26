@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View ,TouchableOpacity,FlatList,Image} from 'react-native';
+import { StyleSheet, Text, View ,TouchableOpacity,FlatList,Image,ScrollView} from 'react-native';
 import { useState } from 'react/cjs/react.production.min';
 import Product from './Products';
 
@@ -10,21 +10,23 @@ const proudectdetails = (props) => {
 
     return(
         <View style={styles.container}>
-           <View>
-               <Text style={styles.titleFont}>{Product.productName}</Text>
-           </View>
-           <View>
-               <Text style={styles.regularFont}>{Product.productPrice}₪</Text>
-           </View>
-           <View style={styles.description}>
-               <Text style={styles.regularFont}>{Product.productDescription}</Text>
-           </View>
-           <View>
-               <Image
-                  style={{width: 300, height: 400, borderRadius:10}} 
-                  source={{uri:Product.imageUrl}}         
-               />
-           </View>
+            <ScrollView>    
+                <View style={{width:'100%', justifyContent: 'center', alignItems: 'center'}}>
+                    <Text style={styles.titleFont}>{Product.productName}</Text>
+                </View>
+                <View style={{width:'100%', justifyContent: 'center', alignItems: 'center'}}>
+                    <Text style={styles.regularFont}>{Product.productPrice}₪</Text>
+                </View>
+                <View style={styles.description}>
+                    <Text style={styles.regularFont}>{Product.productDescription}</Text>
+                </View>
+                <View style={{width:'100%', justifyContent: 'center', alignItems: 'center'}}>
+                    <Image
+                        style={{width: 300, height: 200, borderRadius:10}} 
+                        source={{uri:Product.imageUrl}}         
+                    />
+                </View>
+            </ScrollView>
         </View>
     )
 
@@ -38,6 +40,10 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       
     },
+    scrollView:{
+        alignItems: 'center',
+      justifyContent: 'center',
+    },
     description:{
         backgroundColor: '#0099ff',
         borderRadius:10,
@@ -49,11 +55,12 @@ const styles = StyleSheet.create({
         shadowOpacity:10
     },
     titleFont:{
-        fontFamily:'impact',
-        fontSize:50,
+        marginTop:100,
+        fontFamily:'AppleSDGothicNeo-Bold',
+        fontSize:40,
     },
     regularFont:{
-        fontFamily:'impact',
+        fontFamily:'AppleSDGothicNeo-Bold',
         fontSize:20
     }
   });
